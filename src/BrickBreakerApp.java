@@ -1,3 +1,5 @@
+import java.awt.Component;
+
 import javax.swing.JFrame;
 
 // public class App {
@@ -20,6 +22,9 @@ public class BrickBreakerApp {
         obj.setResizable(false);
         // having the game show it's visibility to Boolean true.
         obj.setVisible(true);
+        obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // adding and passing through the game play.
+        obj.add(gamePlay);
     }
 }
 
