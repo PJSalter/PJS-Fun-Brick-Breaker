@@ -1,6 +1,6 @@
-# PJS Fun Brick Breaker
+# 🧱 PJS Fun Brick Breaker 🎾
 
-### Bouncing Ball Intro:
+### 🎾 Bouncing Ball Intro: 🧱
 
 ###### - Welcome to this exciting retro brick smasher game where a user will move a PADDLE from side-to-side to hit a ball so that it bounces to break a brick. 
 
