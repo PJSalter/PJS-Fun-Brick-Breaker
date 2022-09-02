@@ -6,6 +6,8 @@
 
 ###### - The whole goal of the game is to destroy all of the bricks at the top of the screen by targetting them with the ball. But, if the ball touches the ground instead of the paddle then the user loses resulting to GAME OVER! To win the game, all the bricks need to be eliminated.
 
+![cracked-brick](https://user-images.githubusercontent.com/45575016/188209697-c6920f7e-4ddb-43df-b91f-391abfeb1718.gif)
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
