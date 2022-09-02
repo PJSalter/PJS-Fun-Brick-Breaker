@@ -1,5 +1,11 @@
 # PJS Fun Brick Breaker
 
+### Bouncing Ball Intro:
+
+###### - Welcome to this exciting retro brick smasher game where a user will move a PADDLE from side-to-side to hit a ball so that it bounces to break a brick. 
+
+###### - The whole goal of the game is to destroy all of the bricks at the top of the screen by targetting them with the ball. But, if the ball touches the ground instead of the paddle then the user loses resulting to GAME OVER! To win the game, all the bricks need to be eliminated.
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
