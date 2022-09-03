@@ -1,7 +1,11 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.awt.Graphics;
+
 
 // implementing this with a keylist listener and extending the gameplay class with JPanel
 public class GamePlay extends JPanel implements KeyListener, ActionListener{
@@ -50,7 +54,19 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
             g.drawString(""+score, 590, 30);
 
             g.setColor(Color.yellow);
+            g.fillRect(playerX, 550, 100, 8);
 
+            // setting the color for the ball.
+            g.setColor(Color.GREEN);
+            // creating the circle for the ball.
+            g.fillOval(ballposX, ballposY, 20, 20);
+
+            if(ballposY > 570){
+                play = false;
+                ballXDir = 0;
+                ballYDir = 0;
+                g.setColor(Color.red);
+            }
         }
 
         @Override
