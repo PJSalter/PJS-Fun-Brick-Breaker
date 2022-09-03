@@ -5,6 +5,8 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.Font;
 
 
 // implementing this with a keylist listener and extending the gameplay class with JPanel
@@ -66,12 +68,74 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
                 ballXDir = 0;
                 ballYDir = 0;
                 g.setColor(Color.red);
+                // displaying message as game over. with font size 30 and bold
+                g.setFont(new Font("serif", Font.BOLD, 30));
+                // then I will display the string of text for the message that will show.
+                g.drawString("Game Over Score : "+score, 190, 300);
+
+                g.setFont(new Font("serif", Font.BOLD, 30));
+                g.drawString("Press Enter to Restart Game ", 190, 340);
             }
+            // checking if thd total bricks is equal to zero.
+            if(totalBricks == 0){
+                // this will then mean that the player has managed to break all the bricks.
+                play = false;
+                ballYDir = -2;
+                ballXDir = -1;
+                g.setColor(Color.red);
+                g.setFont(new Font("serif", Font.BOLD, 30)); 
+                
+                g.drawString("Game Over Score : "+score, 190, 300);
+
+                g.setFont(new Font("serif", Font.BOLD, 30));
+                g.drawString("Press Enter to Restart Game ", 190, 340);
+            }
+
+            g.dispose();
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not Supported Yet.");
+            // throw new UnsupportedOperationException("Not Supported Yet.");
+            // starting the timer first.
+            timer.start();
+            // now I will check if the game is being run to start.
+            if(play){
+                if(new Rectangle(ballposX, ballposY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))){
+                    ballYDir = -ballYDir;
+                }
+                A:
+                for(int i = 0; i < map.map.length; i++) {
+                        for(int j = 0; j < map.map[0].length; j++) {
+                            if(map.map[i][j] > 0) {
+                                int brickX = j*map.brickWidth + 80;
+                                int brickY = i*map.brickHeight + 50;
+                                int bricksWidth = map.brickWidth;
+                                int bricksHeight = map.brickHeight;
+
+                                Rectangle rect = new Rectangle(brickX, brickY, bricksWidth, bricksHeight);
+                                Rectangle ballrect = new Rectangle(ballposX, ballposY, 20, 20);
+                                Rectangle brickrect = rect;
+                                if(ballrect.intersects(brickrect)) {
+                                            map.setBrickValue(0, i, j);
+                                            totalBricks--;
+                                            score += 5;
+                                            if(ballposX + 19 <= brickrect.x || ballposX + 1 >= brickrect.x + bricksWidth){
+                                                ballXDir =- ballXDir;
+                                            } else {
+                                                ballYDir = -ballYDir;
+                                            }
+                                            break A;
+                                }
+                            }
+                        }
+                }
+                ballposX += ballXDir;
+                ballposY += ballYDir;
+                if(ballposX < 0) {
+                    ballXDir = -ballXDir;
+                }
+            }
             
         }
         @Override
