@@ -11,6 +11,9 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
         private int totalBricks = 21;
         private Timer timer;
         private int delay = 8;
+        private int playerX = 310;
+        // specifying the ball position.
+        private int ballposX = 120;
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO Auto-generated method stub
