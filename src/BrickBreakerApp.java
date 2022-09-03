@@ -1,5 +1,3 @@
-import java.awt.Component;
-
 import javax.swing.JFrame;
 
 // public class App {
@@ -11,11 +9,11 @@ import javax.swing.JFrame;
 
 // first initial class writing for writing java for the game.
 public class BrickBreakerApp {
-    private static final Component GamePlay = null;
+    // private static final Component GamePlay = null;
 
     public static void main(String[] args){
         JFrame obj = new JFrame();
-        new GamePlay();
+        GamePlay gameplay = new GamePlay();
         // defining the bounding rectangle of a component of position and size.
         obj.setBounds(10, 10, 700, 600);
         // setting the title of the project.
@@ -26,7 +24,7 @@ public class BrickBreakerApp {
         obj.setVisible(true);
         obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // adding and passing through the game play.
-        obj.add(GamePlay);
+        obj.add(gameplay);
     }
 }
 
