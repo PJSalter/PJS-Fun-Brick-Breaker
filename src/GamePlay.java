@@ -14,6 +14,16 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
         private int playerX = 310;
         // specifying the ball position.
         private int ballposX = 120;
+        // ball position for y
+        private int ballposY = 350;
+        // ball x direction and ball y direction.
+        private int ballXDir = -1;
+        private int ballYDir = -2;
+
+        // then call the map generator class which i already created.
+
+        private MapGenerator map;
+
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO Auto-generated method stub
