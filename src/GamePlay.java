@@ -1,7 +1,6 @@
-
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JPanel;
-// import javax.swing.event.AncestorListener;
 import javax.swing.Timer;
 
 // implementing this with a keylist listener and extending the gameplay class with JPanel
