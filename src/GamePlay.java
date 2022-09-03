@@ -32,26 +32,51 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
                 addKeyListener(this);
                 setFocusable(true);
                 setFocusTraversalKeysEnabled(false);
+                timer = new Timer(delay, this);
+                timer.start();
+        }
+
+        public void paint(Graphics g){
+            g.setColor(Color.black);
+            g.fillRect(1, 1, 692, 592);
+            map.draw((Graphics2D) g);
+            g.setColor(Color.yellow);
+            g.fillRect(0, 0, 3, 592);
+            g.fillRect(0, 0, 692, 3);
+            g.fillRect(691, 0, 3, 592);
+
+            g.setColor(Color.white);
+            g.setFont(new Font("serif", Font.BOLD,25));
+            g.drawString(""+score, 590, 30);
+
+            g.setColor(Color.yellow);
+
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Not Supported Yet.");
             
         }
         @Override
-        public void keyTyped(KeyEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
+        public void keyTyped(KeyEvent e) {}
+
         @Override
         public void keyPressed(KeyEvent e) {
-            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Not Supported Yet.");
+            }
             
-        }
         @Override
-        public void keyReleased(KeyEvent e) {
-            // TODO Auto-generated method stub
-            
+        public void keyReleased(KeyEvent e) {}
+
+        public void moveRight(){
+            play = true;
+            playerX += 20;
         }
+
+        public void moveLeft(){
+            play = true;
+            playerX -= 20;
+        }
+
 }
