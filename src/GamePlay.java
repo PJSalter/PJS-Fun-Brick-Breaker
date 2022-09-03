@@ -24,6 +24,16 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
 
         private MapGenerator map;
 
+        // creating a variable and constructor for map.
+
+        public GamePlay(){
+            map = new MapGenerator(3, 7);
+             // key this listener method
+                addKeyListener(this);
+                setFocusable(true);
+                setFocusTraversalKeysEnabled(false);
+        }
+
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO Auto-generated method stub
