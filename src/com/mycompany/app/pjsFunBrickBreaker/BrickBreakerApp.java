@@ -1,5 +1,5 @@
 // import java.awt.Component;
-
+package com.mycompany.app.pjsFunBrickBreaker;
 import javax.swing.JFrame;
 
 // public class App {

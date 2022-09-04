@@ -1,9 +1,11 @@
+package com.mycompany.app.pjsFunBrickBreaker;
 // import java.awt.*;
 import java.awt.event.*;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Font;
