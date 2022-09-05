@@ -1,12 +1,6 @@
 // import java.awt.Component;
-
+package com.mycompany.app.pjsFunBrickBreaker;
 import javax.swing.JFrame;
-
-// public class App {
-//     public static void main(String[] args) throws Exception {
-//         System.out.println("Hello, JAVA World!");
-//     }
-// }
 
 
 // first initial class writing for writing java for the game.

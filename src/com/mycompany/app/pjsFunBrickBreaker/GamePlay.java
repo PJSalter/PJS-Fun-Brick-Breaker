@@ -1,9 +1,11 @@
+package com.mycompany.app.pjsFunBrickBreaker;
 // import java.awt.*;
 import java.awt.event.*;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Font;
@@ -57,7 +59,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
 
             g.setColor(Color.yellow);
             g.fillRect(playerX, 550, 100, 8);
-
+            System.out.println("color: "+g);
             // setting the color for the ball.
             g.setColor(Color.GREEN);
             // creating the circle for the ball.
@@ -135,15 +137,51 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener{
                 if(ballposX < 0) {
                     ballXDir = -ballXDir;
                 }
+                if (ballposY < 0) {
+                    ballYDir = -ballYDir;
+                }
+                if (ballposX > 670) {
+                    ballXDir = -ballXDir;
+                }
+
             }
-            
+                repaint();
         }
         @Override
         public void keyTyped(KeyEvent e) {}
 
         @Override
         public void keyPressed(KeyEvent e) {
-            throw new UnsupportedOperationException("Not Supported Yet.");
+            // throw new UnsupportedOperationException("Not Supported Yet.");
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                if (playerX >= 600) {
+                    playerX = 600;
+                } else {
+                    moveRight();
+                }
+            }
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                if (playerX < 10) {
+                    playerX = 10;
+                } else {
+                    moveLeft();
+                }
+            }
+    
+            if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (!play) {
+                    ballposX = 120;
+                    ballposY = 350;
+                    ballXDir = -1;
+                    ballYDir = -2;
+                    score = 0;
+                    playerX = 310;
+                    totalBricks = 21;
+                    map = new MapGenerator(3, 7);
+    
+                    repaint();
+                }
+            }
             }
             
         @Override

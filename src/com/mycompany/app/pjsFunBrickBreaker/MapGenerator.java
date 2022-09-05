@@ -1,3 +1,4 @@
+package com.mycompany.app.pjsFunBrickBreaker;
 import java.awt.Color;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
@@ -21,7 +22,7 @@ public class MapGenerator {
         }
         // then I need to specify the brick width with the brick height.
         brickWidth = 540/col;
-        brickHeight = 540/row;
+        brickHeight = 150/row;
     }
     // creating a seperate method to draw the bricks and specifying it's parameter.
     public void draw(Graphics2D g){
